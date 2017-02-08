@@ -1,0 +1,42 @@
+ODM 
+ORM
+Brings structure to the mongodb documents using a schema
+
+-------------------------------
+var mongoose = require('mongoose');
+
+var url = 'mongodb://localhost:27017/conFusion';
+mongoose.connnect(url);
+
+
+-------------------------------
+
+Schema Types: String, Number, Date, Buffer, Boolean, Mixed, ObjectId, Array
+
+Create model from schema
+
+----------------------
+Mongoose schema
+
+var mongoose = require('mongoose');
+var Schema = mongose.Schema;
+
+var dishSchema = new Schema({
+	name:{type: String, required: true, unique: true},
+	description:{type: String, required: true}},
+	{timestamps: true}
+});
+
+var Dishes - mongoose.model('Dish', dishSchema);
+-------------------------
+var Dishes = require('./models/dishes');
+
+var newDish = Dishes({
+	new:'Uthapizza',
+	descriptions: 'Yummy'
+});
+---------------------------
+
+Embedded Document Schema
+
+findByIdAndUpdate
